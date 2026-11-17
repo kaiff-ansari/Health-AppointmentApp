@@ -1,4 +1,4 @@
-# 🩺 Doctor Appointment & Practice Management System
+# 🩺 Doctor Appointment & Management System
 
 > 🔗 **Live Deployment:** [https://health-appointment-app-liart.vercel.app](https://health-appointment-app-liart.vercel.app/)
 
@@ -127,5 +127,3 @@ npm run dev          # Starts frontend on port 5173
 
 ---
 
-## 📄 License
-This project is licensed under the [ISC License](LICENSE).
