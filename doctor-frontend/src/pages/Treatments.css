@@ -1,0 +1,141 @@
+.treatments-filter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+  flex-wrap: wrap;
+}
+.treatments-filter__icon { color: var(--clr-text-muted); flex-shrink: 0; }
+.treatments-filter__pills { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+
+.filter-pill {
+  padding: 0.4rem 1.1rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--clr-border);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--clr-text-muted);
+  background: white;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.filter-pill:hover { border-color: var(--clr-primary); color: var(--clr-primary); }
+.filter-pill--active {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  color: white;
+}
+
+.treatments-list { display: flex; flex-direction: column; gap: var(--space-md); }
+
+.procedure-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--clr-border);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+.procedure-card:hover { box-shadow: var(--shadow-md); }
+
+.procedure-card__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) var(--space-xl);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+.procedure-card__header:hover { background: var(--clr-bg); }
+.procedure-card__header--open { background: var(--clr-primary-light); }
+
+.procedure-card__left { display: flex; align-items: center; gap: var(--space-md); }
+.procedure-card__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--clr-primary-light);
+  color: var(--clr-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.procedure-card__header--open .procedure-card__icon {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.procedure-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  margin-bottom: 4px;
+}
+.procedure-card__cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+.cat--interventional { background: #dbeafe; color: #1a6bbd; }
+.cat--diagnostic      { background: #d1fae5; color: #059669; }
+.cat--structural      { background: #ede9fe; color: #7c3aed; }
+.cat--preventive      { background: #e0f5f4; color: #0ea5a0; }
+
+.procedure-card__chevron {
+  color: var(--clr-text-muted);
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+.procedure-card__chevron--open {
+  transform: rotate(180deg);
+  color: var(--clr-primary);
+}
+
+.procedure-card__body {
+  padding: 0 var(--space-xl) var(--space-xl);
+  border-top: 1px solid var(--clr-border);
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+.procedure-card__desc {
+  font-size: 0.92rem;
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+  margin: var(--space-md) 0 !important;
+}
+.procedure-card__meta {
+  display: flex;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--clr-bg);
+  border-radius: var(--radius-md);
+}
+.procedure-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.82rem;
+  color: var(--clr-text-muted);
+}
+.procedure-meta-item svg { color: var(--clr-primary); }
+.procedure-meta-item strong { color: var(--clr-text); }
+
+/* Skeleton */
+.treatments-skeleton { display: flex; flex-direction: column; gap: var(--space-md); }
+.skeleton-row {
+  height: 72px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(90deg, #f0f8ff 25%, #e8f2fb 50%, #f0f8ff 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}

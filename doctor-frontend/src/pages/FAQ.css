@@ -1,0 +1,87 @@
+.faq-container { max-width: 800px; margin: 0 auto; }
+
+.faq-filter {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2xl);
+}
+
+.faq-list { display: flex; flex-direction: column; gap: var(--space-sm); }
+
+.faq-item {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--clr-border);
+  overflow: hidden;
+  transition: box-shadow var(--transition-fast);
+}
+.faq-item:hover { box-shadow: var(--shadow-md); }
+
+.faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-xl);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+.faq-item__question:hover { background: var(--clr-bg); }
+.faq-item__question--open {
+  background: var(--clr-primary-light);
+  border-bottom: 1px solid var(--clr-border);
+}
+.faq-item__q-text {
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: var(--clr-text);
+  line-height: 1.4;
+}
+.faq-item__question--open .faq-item__q-text { color: var(--clr-primary-dark); }
+
+.faq-item__chevron {
+  color: var(--clr-text-muted);
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+.faq-item__chevron--open {
+  transform: rotate(180deg);
+  color: var(--clr-primary);
+}
+
+.faq-item__answer {
+  padding: var(--space-lg) var(--space-xl);
+  animation: fadeIn 0.25s ease;
+}
+.faq-item__answer p {
+  font-size: 0.9rem;
+  color: var(--clr-text-muted);
+  line-height: 1.75;
+  margin: 0 !important;
+}
+
+/* CTA */
+.faq-cta { margin-top: var(--space-3xl); }
+.faq-cta__inner {
+  background: linear-gradient(135deg, var(--clr-primary-light), var(--clr-accent-light));
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  text-align: center;
+  border: 1px solid var(--clr-border);
+}
+.faq-cta__inner h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: var(--space-sm); }
+.faq-cta__inner p  { color: var(--clr-text-muted); margin-bottom: var(--space-xl) !important; }
+.faq-cta__buttons  { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
+
+/* Shared skeleton-row (may already be defined, kept here as fallback) */
+.skeleton-row {
+  border-radius: var(--radius-lg);
+  background: linear-gradient(90deg, #f0f8ff 25%, #e8f2fb 50%, #f0f8ff 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}

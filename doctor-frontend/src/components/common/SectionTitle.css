@@ -1,0 +1,26 @@
+.section-title { margin-bottom: var(--space-3xl); }
+.section-title--center { text-align: center; }
+
+.section-title__pill {
+  display: inline-flex;
+  margin-bottom: var(--space-md);
+}
+
+.section-title__heading {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--clr-text);
+  margin-bottom: var(--space-md);
+}
+
+.section-title__subtitle {
+  font-size: 1.05rem;
+  color: var(--clr-text-muted);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.section-title--center .section-title__subtitle {
+  margin: 0 auto;
+}

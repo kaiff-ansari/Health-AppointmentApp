@@ -1,0 +1,7 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.star-rating__star--filled { color: #f59e0b; }
+.star-rating__star--empty  { color: #d1d5db; }

@@ -1,0 +1,82 @@
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+@media (max-width: 1024px) { .spec-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .spec-grid { grid-template-columns: 1fr; } }
+
+.spec-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--clr-border);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+}
+.spec-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.spec-card__top {
+  padding: var(--space-2xl) var(--space-xl) var(--space-lg);
+  background: color-mix(in srgb, var(--spec-color, var(--clr-primary)) 10%, white);
+  border-bottom: 1px solid var(--clr-border);
+}
+.spec-card__icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--spec-color, var(--clr-primary)) 18%, white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: var(--space-md);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--spec-color, var(--clr-primary)) 25%, transparent);
+}
+.spec-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--clr-text);
+}
+
+.spec-card__body {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  flex: 1;
+}
+.spec-card__short {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--clr-text);
+  margin: 0 !important;
+}
+.spec-card__full {
+  font-size: 0.85rem;
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+  margin: 0 !important;
+}
+.spec-card__link {
+  margin-top: auto;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Skeletons */
+.loading-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
+.skeleton-card {
+  height: 320px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(90deg, #f0f8ff 25%, #e8f2fb 50%, #f0f8ff 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.spec-cta h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; }
